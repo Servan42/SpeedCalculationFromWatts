@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedCalculationFromWatts", "SpeedCalculationFromWatts\SpeedCalculationFromWatts.csproj", "{69C71B11-6BEE-4AD8-81DD-70F22429D834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedCalculationFromWatts", "SpeedCalculationFromWatts\SpeedCalculationFromWatts.csproj", "{69C71B11-6BEE-4AD8-81DD-70F22429D834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{C803D12D-80EB-4C1B-AC45-0008F2A11A4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{BEA1D1FB-1F71-4A9C-9D24-01C5EB7B9912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{69C71B11-6BEE-4AD8-81DD-70F22429D834}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69C71B11-6BEE-4AD8-81DD-70F22429D834}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69C71B11-6BEE-4AD8-81DD-70F22429D834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C803D12D-80EB-4C1B-AC45-0008F2A11A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C803D12D-80EB-4C1B-AC45-0008F2A11A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C803D12D-80EB-4C1B-AC45-0008F2A11A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C803D12D-80EB-4C1B-AC45-0008F2A11A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA1D1FB-1F71-4A9C-9D24-01C5EB7B9912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA1D1FB-1F71-4A9C-9D24-01C5EB7B9912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA1D1FB-1F71-4A9C-9D24-01C5EB7B9912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA1D1FB-1F71-4A9C-9D24-01C5EB7B9912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
