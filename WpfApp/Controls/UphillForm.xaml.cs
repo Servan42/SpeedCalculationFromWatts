@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfApp.Controls
 {
     /// <summary>
-    /// Interaction logic for StatsForm.xaml
+    /// Interaction logic for UphillForm.xaml
     /// </summary>
-    public partial class StatsForm : UserControl
+    public partial class UphillForm : UserControl
     {
-        public StatsForm()
+        public UphillForm()
         {
             InitializeComponent();
         }

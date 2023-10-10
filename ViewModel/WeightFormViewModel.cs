@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpeedCalculationFromWatts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,11 @@ namespace ViewModel
             }
         }
 
-        public string TotalWeight => $"Total: {cyclistWeight + bikeWeight}kg";
+        public int GetTotalWeight()
+        {
+            return cyclistWeight + bikeWeight;
+        }
+
+        public string TotalWeight => $"Total: {GetTotalWeight()}kg";
     }
 }

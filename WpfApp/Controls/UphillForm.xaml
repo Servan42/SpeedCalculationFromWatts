@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfApp.Controls.StatsForm"
+﻿<UserControl x:Class="WpfApp.Controls.UphillForm"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,11 +17,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Rectangle Grid.ColumnSpan="2" Grid.Row="0" Fill="#FF282828"/>
@@ -34,43 +29,32 @@
                    FontWeight="Bold">UPHILL SEGMENT</TextBlock>
 
         <TextBlock Grid.Column="0" Grid.Row="1" Margin="10 10 0 10">Distance (km)</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="10"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="10" Text="{Binding UphillFormViewModel.DistanceForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Column="0" Grid.Row="2" Margin="10 10 0 10">Elevation (m)</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="10"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="10" Text="{Binding UphillFormViewModel.ElevationForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBlock Grid.Column="0" Grid.Row="3" Margin="10 10 0 10">Expected Average Power (W)</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="3" Margin="10"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Margin="10 10 0 10">Targeted Average Power (W)</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="10" Text="{Binding UphillFormViewModel.TargetedAveragePowerForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Button 
-            Grid.ColumnSpan="2" 
+            Grid.Column="0" 
             Grid.Row="4"
             Margin="10"
             Padding="10 5 10 5"
             HorizontalAlignment="Center" 
             VerticalAlignment="Center">Add UH Segment</Button>
 
-        <Rectangle Grid.ColumnSpan="2" Grid.Row="5" Fill="#FF282828"/>
-        <TextBlock Grid.Column="0" 
-                   Grid.Row="5" 
-                   Margin="10 10 10 10" 
-                   Grid.ColumnSpan="2" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"
-                   FontWeight="Bold">DOWNHILL SEGMENT</TextBlock>
+        <Grid Grid.Column="1" Grid.Row="4" Margin ="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.Row="6" Margin="10 10 0 10">Distance (km)</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="6" Margin="10"/>
-
-        <TextBlock Grid.Column="0" Grid.Row="7" Margin="10 10 0 10">Expected Average Speed (km/h)</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="7" Margin="10"/>
-
-        <Button 
-            Grid.ColumnSpan="2" 
-            Grid.Row="8"
-            Margin="10"
-            Padding="10 5 10 5"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center">Add DH Segment</Button>
+            <TextBlock Grid.Row="0" FontWeight="Bold" Text="{Binding UphillFormViewModel.ElevationTextBlock, Mode=OneWay}"/>
+            <TextBlock Grid.Row="1" FontWeight="Bold" Text="{Binding UphillFormViewModel.EstimatedSpeedTextBlock, Mode=OneWay}"/>
+            <TextBlock Grid.Row="2" FontWeight="Bold" Text="{Binding UphillFormViewModel.EstimatedTimeTextBlock, Mode=OneWay}"/>
+        </Grid>
     </Grid>
 </UserControl>

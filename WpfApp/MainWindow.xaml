@@ -27,10 +27,12 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <controls:WeightForm Grid.Row="0"/>
-            <controls:StatsForm Grid.Row="1"/>
+            <controls:UphillForm Grid.Row="1"/>
+            <controls:DownhillForm Grid.Row="2"/>
         </Grid>
 
         <Grid Grid.Column="1" Name="RightColumn">
