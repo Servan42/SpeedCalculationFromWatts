@@ -22,7 +22,7 @@ namespace ViewModel
             set
             {
                 distanceForm = value ?? 0;
-                base.segment.DistanceKm = distanceForm;
+                base.Segment.DistanceKm = distanceForm;
                 RaisePropertyChanged();
                 RunCalculations();
             }
@@ -34,7 +34,7 @@ namespace ViewModel
             set
             {
                 targetedAverageSpeedForm = value ?? 0;
-                base.segment.TargetedAverageSpeedKmh = targetedAverageSpeedForm;
+                base.Segment.TargetedAverageSpeedKmh = targetedAverageSpeedForm;
                 RaisePropertyChanged();
                 RunCalculations();
             }

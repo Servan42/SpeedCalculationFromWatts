@@ -11,5 +11,5 @@
         <Setter Property="ItemsControl.Foreground" Value="White"/>
         <Setter Property="ItemsControl.BorderBrush" Value="#FF8C8C8C"/>
     </Style>
-    
+
 </ResourceDictionary>

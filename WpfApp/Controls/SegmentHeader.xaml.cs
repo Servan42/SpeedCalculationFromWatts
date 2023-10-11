@@ -1,5 +1,4 @@
-﻿using SpeedCalculationFromWatts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,22 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ViewModel;
 
-namespace WpfApp
+namespace WpfApp.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SegmentHeader.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SegmentHeader : UserControl
     {
-        private MainViewModel mainViewModel;
-
-        public MainWindow()
+        public SegmentHeader()
         {
             InitializeComponent();
-            this.mainViewModel = new MainViewModel();
-            DataContext = this.mainViewModel;
         }
     }
 }

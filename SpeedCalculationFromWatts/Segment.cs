@@ -19,19 +19,18 @@ namespace SpeedCalculationFromWatts
         public string Category { get; private set; }
         public double CategoryScore { get; private set; }
         public double CalculatedAverageSpeedMs { get; private set; }
-
-        private bool isDownhill;
+        public bool IsDownhill { get; private set; }
 
         public Segment(bool isDownhill)
         {
-            this.isDownhill = isDownhill;
+            this.IsDownhill = isDownhill;
         }
 
         public Segment(double distance, double targetedAverageSpeed)
         {
             this.DistanceKm = distance;
             this.TargetedAverageSpeedKmh = targetedAverageSpeed;
-            isDownhill = true;
+            IsDownhill = true;
         }
 
         public Segment(double distance, double elevation, double targetedAveragePower, double totalWeight)
@@ -40,7 +39,7 @@ namespace SpeedCalculationFromWatts
             this.ElevationM = elevation;
             this.TargetedAveragePowerW = targetedAveragePower;
             this.TotalWeightKg = totalWeight;
-            isDownhill = false;
+            IsDownhill = false;
         }
 
         public static Segment Build(double distance, double targetedAverageSpeed)
@@ -59,7 +58,7 @@ namespace SpeedCalculationFromWatts
 
         public void ComputeEstimatedData()
         {
-            if (this.isDownhill)
+            if (this.IsDownhill)
                 ComputeEstimatedDataForDownhillSegment();
             else
                 ComputeEstimatedDataForUphillOrFlatSegment();
@@ -123,7 +122,7 @@ namespace SpeedCalculationFromWatts
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("Distance: ").Append(this.DistanceKm).Append("km\t");
-            if (isDownhill)
+            if (IsDownhill)
             {
                 sb.AppendLine();
                 sb.Append("Expected Average Speed: ").Append(this.TargetedAverageSpeedKmh).Append("km/h    ");
@@ -140,6 +139,21 @@ namespace SpeedCalculationFromWatts
                 sb.Append("Expected Time: ").Append($"{this.EstimatedTime.Hours.ToString("00")}h{this.EstimatedTime.Minutes.ToString("00")}m{this.EstimatedTime.Seconds.ToString("00")}s");
             }
             Console.WriteLine(sb.ToString());
+        }
+
+        public Segment Clone()
+        {
+            Segment result;
+            if (this.IsDownhill)
+            {
+                result = Segment.Build(this.DistanceKm, this.TargetedAverageSpeedKmh);
+            }
+            else
+            {
+                result = Segment.Build(this.DistanceKm, this.ElevationM, this.TargetedAveragePowerW, this.TotalWeightKg);
+            }
+            result.ComputeEstimatedData();
+            return result;
         }
     }
 }

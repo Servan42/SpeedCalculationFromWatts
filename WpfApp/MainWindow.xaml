@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp"
         xmlns:controls="clr-namespace:WpfApp.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000" FontSize="14" Background="#FF1E1E1E" Foreground="White" FontFamily="Consolas">
+        Title="MainWindow" Height="500" Width="1200" FontSize="14" Background="#FF1E1E1E" Foreground="White" FontFamily="Consolas">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -19,7 +19,7 @@
 
     <Grid Name="MainFrame">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -36,7 +36,16 @@
         </Grid>
 
         <Grid Grid.Column="1" Name="RightColumn">
-            <Rectangle Fill="#FF292929"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <controls:SegmentHeader Grid.Row="0"/>
+            <controls:SegmentListBox Grid.Row="1"/>
+            <Rectangle Grid.Row="2" Fill="#FF282828"/>
+            <controls:RideReport Grid.Row="2"/>
         </Grid>
     </Grid>
 </Window>

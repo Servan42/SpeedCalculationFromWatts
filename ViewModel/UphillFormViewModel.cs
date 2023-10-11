@@ -23,7 +23,7 @@ namespace ViewModel
             set 
             {
                 distanceForm = value ?? 0; 
-                base.segment.DistanceKm = distanceForm;
+                base.Segment.DistanceKm = distanceForm;
                 RaisePropertyChanged();
                 RunCalculations();
                 RaisePropertyChanged(nameof(ElevationTextBlock));
@@ -36,7 +36,7 @@ namespace ViewModel
             set
             {
                 elevationForm = value ?? 0;
-                base.segment.ElevationM = elevationForm;
+                base.Segment.ElevationM = elevationForm;
                 RaisePropertyChanged();
                 RunCalculations();
                 RaisePropertyChanged(nameof(ElevationTextBlock));
@@ -49,12 +49,12 @@ namespace ViewModel
             set
             {
                 targetedAveragePowerForm = value ?? 0;
-                base.segment.TargetedAveragePowerW = targetedAveragePowerForm;
+                base.Segment.TargetedAveragePowerW = targetedAveragePowerForm;
                 RaisePropertyChanged();
                 RunCalculations();
             }
         }
 
-        public string ElevationTextBlock => $"Gradient: {(segment.GradientPer * 100).ToString("0.#")}%  Category: {segment.Category}";
+        public string ElevationTextBlock => $"Gradient: {(Segment.GradientPer * 100).ToString("0.#")}%  Category: {Segment.Category}";
     }
 }

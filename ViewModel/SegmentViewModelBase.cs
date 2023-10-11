@@ -9,25 +9,25 @@ namespace ViewModel
 {
     public class SegmentViewModelBase : ViewModelBase
     {
-        protected Segment segment;
+        public Segment Segment { get; protected set; }
         private readonly WeightFormViewModel weightFormViewModel;
 
         public SegmentViewModelBase(Segment segment, WeightFormViewModel weightFormViewModel)
         {
-            this.segment = segment;
+            this.Segment = segment;
             this.weightFormViewModel = weightFormViewModel;
         }
 
         protected void RunCalculations()
         {
-            segment.TotalWeightKg = weightFormViewModel.GetTotalWeight();
-            segment.ComputeEstimatedData();
+            Segment.TotalWeightKg = weightFormViewModel.GetTotalWeight();
+            Segment.ComputeEstimatedData();
             RaisePropertyChanged(nameof(EstimatedSpeedTextBlock));
             RaisePropertyChanged(nameof(EstimatedTimeTextBlock));
         }
 
-        public string EstimatedSpeedTextBlock => $"Estimated Speed: {(segment.CalculatedAverageSpeedMs * 3.6).ToString("0.#")} km/h";
-        public string EstimatedTimeTextBlock => $"Estimated Time: {segment.EstimatedTime.Hours.ToString("00")}h{segment.EstimatedTime.Minutes.ToString("00")}m{segment.EstimatedTime.Seconds.ToString("00")}s";
+        public string EstimatedSpeedTextBlock => $"Estimated Speed: {(Segment.CalculatedAverageSpeedMs * 3.6).ToString("0.#")} km/h";
+        public string EstimatedTimeTextBlock => $"Estimated Time: {Segment.EstimatedTime.Hours.ToString("00")}h{Segment.EstimatedTime.Minutes.ToString("00")}m{Segment.EstimatedTime.Seconds.ToString("00")}s";
 
     }
 }
