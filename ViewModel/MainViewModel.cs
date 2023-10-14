@@ -14,6 +14,7 @@ namespace ViewModel
         UphillFormViewModel uphillFormViewModel;
         DownhillFormViewModel downHillFormViewModel;
         RideViewModel rideViewModel;
+        FTPSegmentTabViewModel fTPSegmentTabViewModel;
 
         public MainViewModel()
         {
@@ -21,6 +22,7 @@ namespace ViewModel
             this.uphillFormViewModel = new(weightFormViewModel);
             this.downHillFormViewModel = new(weightFormViewModel);
             this.rideViewModel = new();
+            this.fTPSegmentTabViewModel = new(weightFormViewModel);
             AddUHSegementToRideCommand = new DelegateCommand(AddUHSegementToRide);
             AddDHSegementToRideCommand = new DelegateCommand(AddDHSegementToRide);
         }
@@ -29,6 +31,7 @@ namespace ViewModel
         public UphillFormViewModel UphillFormViewModel { get => uphillFormViewModel; set => uphillFormViewModel = value; }
         public DownhillFormViewModel DownhillFormViewModel { get => downHillFormViewModel; set => downHillFormViewModel = value; }
         public RideViewModel RideViewModel { get => rideViewModel; set => rideViewModel = value; }
+        public FTPSegmentTabViewModel FTPSegmentTabViewModel { get => fTPSegmentTabViewModel; set => fTPSegmentTabViewModel = value; }
 
         public DelegateCommand AddUHSegementToRideCommand { get; }
         public DelegateCommand AddDHSegementToRideCommand { get; }

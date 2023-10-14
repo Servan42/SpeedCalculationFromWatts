@@ -12,4 +12,13 @@
         <Setter Property="ItemsControl.BorderBrush" Value="#FF8C8C8C"/>
     </Style>
 
+    <Style TargetType="TabItem">
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="#000" />
+                <Setter Property="Background" Value="red" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>

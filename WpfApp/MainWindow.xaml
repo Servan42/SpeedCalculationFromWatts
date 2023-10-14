@@ -17,35 +17,15 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Name="MainFrame">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <Grid Grid.Column ="0" Name ="LeftColumn">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <controls:WeightForm Grid.Row="0"/>
-            <controls:UphillForm Grid.Row="1"/>
-            <controls:DownhillForm Grid.Row="2"/>
-        </Grid>
-
-        <Grid Grid.Column="1" Name="RightColumn">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <controls:SegmentHeader Grid.Row="0"/>
-            <controls:SegmentListBox Grid.Row="1"/>
-            <Rectangle Grid.Row="2" Fill="#FF282828"/>
-            <controls:RideReport Grid.Row="2"/>
-        </Grid>
+    <Grid>
+        <TabControl BorderBrush="{x:Null}" Background="{x:Null}">
+            <TabItem Header="Ride Planning" >
+                <controls:RidePlanningTab/>
+            </TabItem>
+            <TabItem Header="One segment FTP" >
+                <controls:FTPSegmentTab/>
+            </TabItem>
+        </TabControl>
     </Grid>
+
 </Window>

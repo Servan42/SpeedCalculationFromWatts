@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp.Extensions;
 
 namespace ViewModel
 {
@@ -27,7 +28,7 @@ namespace ViewModel
         }
 
         public string EstimatedSpeedTextBlock => $"Estimated Speed: {(Segment.CalculatedAverageSpeedMs * 3.6).ToString("0.#")} km/h";
-        public string EstimatedTimeTextBlock => $"Estimated Time: {Segment.EstimatedTime.Hours.ToString("00")}h{Segment.EstimatedTime.Minutes.ToString("00")}m{Segment.EstimatedTime.Seconds.ToString("00")}s";
+        public string EstimatedTimeTextBlock => Segment.EstimatedTime.GetHourMinSecString();
 
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViewModel.Command;
+using WpfApp.Extensions;
 
 namespace ViewModel
 {
@@ -32,7 +33,7 @@ namespace ViewModel
         public string CategoryTextBlock => this.Segment.IsDownhill ? "" : $"{this.Segment.Category}";
         public string PowerTextBlock => this.Segment.IsDownhill ? "" : $"{this.Segment.TargetedAveragePowerW}W";
         public string SpeedTextBlock  => this.Segment.IsDownhill ? $"{(this.Segment.TargetedAverageSpeedKmh).ToString("0.#")}km/h" : $"{(this.Segment.CalculatedAverageSpeedMs * 3.6).ToString("0.#")}km/h";
-        public string TimeTextBlock => $"{this.Segment.EstimatedTime.Hours.ToString("00")}h{this.Segment.EstimatedTime.Minutes.ToString("00")}m{this.Segment.EstimatedTime.Seconds.ToString("00")}s";
+        public string TimeTextBlock => this.Segment.EstimatedTime.GetHourMinSecString();
 
         private void RequestDeletion()
         {

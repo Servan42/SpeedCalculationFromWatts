@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp.Extensions;
 
 namespace ViewModel
 {
@@ -70,7 +71,7 @@ namespace ViewModel
             {
                 totalTime += s.Segment.EstimatedTime;
             }
-            return $"{totalTime.Hours.ToString("00")}h{totalTime.Minutes.ToString("00")}m{totalTime.Seconds.ToString("00")}s";
+            return totalTime.GetHourMinSecString();
         }
     }
 }
