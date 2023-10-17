@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        xmlns:controls="clr-namespace:WpfApp.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1200" FontSize="14" Background="#FF1E1E1E" Foreground="White" FontFamily="Consolas">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/WpfApp;component/CSS/StaticStyle.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl BorderBrush="{x:Null}" Background="{x:Null}">
+            <TabItem Header="Ride Planning" >
+                <controls:RidePlanningTab/>
+            </TabItem>
+            <TabItem Header="One segment FTP" >
+                <controls:FTPSegmentTab/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</Window>

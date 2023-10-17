@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="WpfApp.Controls.FTPGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" BorderThickness="1" BorderBrush="White" Background="#FF3B3B3B">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Z1 (&lt; 55%)</TextBlock>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="White" Background="#FF2E4976">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Z2 (56 à 75 %)</TextBlock>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="2" BorderThickness="1" BorderBrush="White" Background="#FF264319">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Z3 (76 à 90 %)</TextBlock>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="3" BorderThickness="1" BorderBrush="White" Background="#FF3B240D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Z4 (91 à 105 %)</TextBlock>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="4" BorderThickness="1" BorderBrush="White" Background="#FF59300D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Z5 (106 à 120 %)</TextBlock>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="5" BorderThickness="1" BorderBrush="White" Background="#FF924949">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Z6 (121 à 150 %)</TextBlock>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="White" Background="#FF2F2F2F">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Récupération active</TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="White" Background="#FF21314C">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Endurance</TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2" BorderThickness="1" BorderBrush="White" Background="#FF1A2914">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Tempo</TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="3" BorderThickness="1" BorderBrush="White" Background="#FF24180D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Seuil</TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="4" BorderThickness="1" BorderBrush="White" Background="#FF331E0D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">VO2Max</TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="5" BorderThickness="1" BorderBrush="White" Background="#FF4F2B2B">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Anaérobie</TextBlock>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0" BorderThickness="1" BorderBrush="White" Background="#FF2F2F2F">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattTextBlocks[0], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="White" Background="#FF21314C">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattTextBlocks[1], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2" BorderThickness="1" BorderBrush="White" Background="#FF1A2914">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattTextBlocks[2], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="3" BorderThickness="1" BorderBrush="White" Background="#FF24180D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattTextBlocks[3], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="4" BorderThickness="1" BorderBrush="White" Background="#FF331E0D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattTextBlocks[4], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="5" BorderThickness="1" BorderBrush="White" Background="#FF4F2B2B">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattTextBlocks[5], Mode=OneWay}"/>
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="0" BorderThickness="1" BorderBrush="White" Background="#FF2F2F2F">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattPerKgTextBlocks[0], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="White" Background="#FF21314C">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattPerKgTextBlocks[1], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="2" BorderThickness="1" BorderBrush="White" Background="#FF1A2914">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattPerKgTextBlocks[2], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="3" BorderThickness="1" BorderBrush="White" Background="#FF24180D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattPerKgTextBlocks[3], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="4" BorderThickness="1" BorderBrush="White" Background="#FF331E0D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattPerKgTextBlocks[4], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="5" BorderThickness="1" BorderBrush="White" Background="#FF4F2B2B">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.WattPerKgTextBlocks[5], Mode=OneWay}"/>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" Background="#FF2F2F2F">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.EstimatedTimeTextBlocks[0], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="White" Background="#FF21314C">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.EstimatedTimeTextBlocks[1], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="2" BorderThickness="1" BorderBrush="White" Background="#FF1A2914">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.EstimatedTimeTextBlocks[2], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="3" BorderThickness="1" BorderBrush="White" Background="#FF24180D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.EstimatedTimeTextBlocks[3], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="4" BorderThickness="1" BorderBrush="White" Background="#FF331E0D">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.EstimatedTimeTextBlocks[4], Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="5" BorderThickness="1" BorderBrush="White" Background="#FF4F2B2B">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FTPSegmentTabViewModel.EstimatedTimeTextBlocks[5], Mode=OneWay}"/>
+        </Border>
+    </Grid>
+</UserControl>
