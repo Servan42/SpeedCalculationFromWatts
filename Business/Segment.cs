@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpeedCalculationFromWatts
+namespace Business
 {
     public class Segment
     {
@@ -116,29 +116,6 @@ namespace SpeedCalculationFromWatts
                 return;
 
             this.EstimatedTime = new TimeSpan(0, 0, (int)((this.DistanceKm * 1000) / (this.TargetedAverageSpeedKmh / 3.6)));
-        }
-
-        public void PrintSegmentDetails()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("Distance: ").Append(this.DistanceKm).Append("km\t");
-            if (IsDownhill)
-            {
-                sb.AppendLine();
-                sb.Append("Expected Average Speed: ").Append(this.TargetedAverageSpeedKmh).Append("km/h    ");
-                sb.Append("Expected Time: ").Append($"{this.EstimatedTime.Hours.ToString("00")}h{this.EstimatedTime.Minutes.ToString("00")}m{this.EstimatedTime.Seconds.ToString("00")}s    ");
-            }
-            else
-            {
-                sb.Append("Elevation: ").Append(this.ElevationM).Append("m    ");
-                sb.Append("Gradient: ").Append((this.GradientPer * 100).ToString("0.#")).Append("%    ");
-                if (this.CategoryScore >= 35) sb.Append("Category: ").Append(this.Category).Append($" ({this.CategoryScore})");
-                sb.AppendLine();
-                sb.Append("Targeted Average Power: ").Append(this.TargetedAveragePowerW).Append("W    ");
-                sb.Append("Expected Average Speed: ").Append((this.CalculatedAverageSpeedMs * 3.6).ToString("0.#")).Append("km/h    ");
-                sb.Append("Expected Time: ").Append($"{this.EstimatedTime.Hours.ToString("00")}h{this.EstimatedTime.Minutes.ToString("00")}m{this.EstimatedTime.Seconds.ToString("00")}s");
-            }
-            Console.WriteLine(sb.ToString());
         }
 
         public Segment Clone()
