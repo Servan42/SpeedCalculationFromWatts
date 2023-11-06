@@ -16,7 +16,7 @@ namespace Business
             result.Add(0.0);
             foreach (var per in zonesPercentage)
             {
-                result.Add(ftp * (per + 0.1));
+                result.Add(ftp * (per + 0.01));
             }
             return result;
         }
@@ -37,7 +37,7 @@ namespace Business
             result.Add(ftp * ((0 + zonesPercentage[0]) / 2.0));
             for (int i = 0; i < zonesPercentage.Count - 1; i++)
             {
-                result.Add(ftp * ((zonesPercentage[i] + zonesPercentage[i + 1]) / 2.0));
+                result.Add(ftp * ((zonesPercentage[i] + 0.01 + zonesPercentage[i + 1]) / 2.0));
             }
             return result;
         }

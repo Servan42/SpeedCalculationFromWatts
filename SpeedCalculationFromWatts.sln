@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "WpfApp\WpfApp.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModel", "ViewModel\ViewModel.csproj", "{BEA1D1FB-1F71-4A9C-9D24-01C5EB7B9912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{939BA01B-E34C-4535-8817-F4F0629A4A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{939BA01B-E34C-4535-8817-F4F0629A4A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessTests", "BusinessTests\BusinessTests.csproj", "{86B6A661-66D1-43C4-8162-0BE5E6C1861E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{939BA01B-E34C-4535-8817-F4F0629A4A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{939BA01B-E34C-4535-8817-F4F0629A4A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{939BA01B-E34C-4535-8817-F4F0629A4A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B6A661-66D1-43C4-8162-0BE5E6C1861E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B6A661-66D1-43C4-8162-0BE5E6C1861E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B6A661-66D1-43C4-8162-0BE5E6C1861E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B6A661-66D1-43C4-8162-0BE5E6C1861E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
